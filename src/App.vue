@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app style="background-color: #EFEFEF;">
+    <AppBar />
+     
+    <v-main>
+       <router-view>
+       </router-view>
+    </v-main>
+      <Footer />   
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+
+import Footer from './components/Footer';
+
+import AppBar from './components/AppBar';
 
 export default {
   name: 'App',
+  
   components: {
-    HelloWorld
-  }
-}
+     Footer, AppBar
+  },
+  data: () => ({
+      
+  })
+};
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.heart {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  left: 50%;
+  background: url(/@/assets/heart.png) no-repeat;
+  background-position: 0 0;
+  z-index: 2;
+  cursor: pointer;
+}
+.heart-line {
+  background-position: -3628px 0;
+  transition: background 1s steps(28);
 }
 </style>
