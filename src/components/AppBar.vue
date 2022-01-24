@@ -41,7 +41,7 @@
           </v-col>
          
         <v-col sm="4" md="5">
-         <v-btn :icon="isIcon" v-if="!loggedIn" class="mt-1" color="primary"><v-icon class="mr-md-2">mdi-{{iconLogin}}</v-icon><span class="hidden-sm-and-down">Sign in</span></v-btn>  
+         <v-btn @click="$router.push('/user/login')" :icon="isIcon" v-if="!loggedIn" class="mt-1" color="primary"><v-icon class="mr-md-2">mdi-{{iconLogin}}</v-icon><span class="hidden-sm-and-down">Sign in</span></v-btn>  
          <MenuAccount v-else/>
         </v-col>
     </v-row>
